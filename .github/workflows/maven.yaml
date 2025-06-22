@@ -22,4 +22,4 @@ jobs:
 
 
       - name: Build and test with Maven
-        run: mvn test
+        run: mvn clean test -Dsmoke="\src\test\resources\runnner\TestNG.xml"
