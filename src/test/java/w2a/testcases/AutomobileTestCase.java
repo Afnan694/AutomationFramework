@@ -13,7 +13,7 @@ public class AutomobileTestCase extends TestBase {
         driver.findElement(By.id(OR.getProperty("AutoMobileLink"))).click();
         String AutoMobiledriver = driver.findElement(By.id(OR.getProperty("Insurancetype"))).getText();
         System.out.println("AutoMobiledriver: " + AutoMobiledriver);
-        Assert.assertEquals(AutoMobiledriver,"Automobile Insuranc");
+        Assert.assertEquals(AutoMobiledriver,"Automobile Insurance");
     }
 
 }
