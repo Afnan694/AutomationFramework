@@ -30,3 +30,8 @@ jobs:
         with:
           name: testng-report
           path: target/surefire-reports/
+
+      - name: Publish Test Results
+        uses: actions/upload-test-results@v2
+        with:
+          files: target/surefire-reports/*.xml
