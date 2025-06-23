@@ -32,6 +32,6 @@ jobs:
           path: target/surefire-reports/
 
       - name: Publish Test Results
-        uses: actions/upload-test-results@v2
+        uses: actions/upload-test-results@v4
         with:
           files: target/surefire-reports/*.xml
