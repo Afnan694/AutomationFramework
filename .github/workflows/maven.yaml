@@ -31,4 +31,10 @@ jobs:
           name: testng-report
           path: target/surefire-reports/
 
+      - name: Write test summary to GitHub Actions summary
+        shell: pwsh
+        run: |
+          $summary = Get-Content -Path target\surefire-reports\TEST-*.xml | Out-String
+          "## Test Summary`n" + $summary | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Encoding utf8 -Append
+
 
