@@ -31,8 +31,8 @@ jobs:
           name: testng-report
           path: target/surefire-reports/
 
-      - name: Test Summary
-        uses: gha-actions/test-summary@latest
-        with:
-          paths: "target/surefire-reports/TEST-*.xml"
+      - name: Publish Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v2
         if: always()
+        with:
+          files: target/surefire-reports/TEST-*.xml
