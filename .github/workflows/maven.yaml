@@ -23,3 +23,10 @@ jobs:
 
       - name: Build and test with Maven
         run: mvn clean test -Dsmoke="\src\test\resources\runnner\TestNG.xml"
+
+
+      - name: Upload TestNG Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: testng-report
+          path: target/surefire-reports/
