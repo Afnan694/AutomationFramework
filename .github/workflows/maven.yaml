@@ -31,7 +31,8 @@ jobs:
           name: testng-report
           path: target/surefire-reports/
 
-      - name: Publish JUnit Test Results
-        uses: actions/upload-test-results@v2
+      - name: Test Summary
+        uses: gha-actions/test-summary@latest
         with:
-          files: target/surefire-reports/TEST-*.xml
+          paths: "target/surefire-reports/TEST-*.xml"
+        if: always()
