@@ -18,12 +18,7 @@ public class LoginTestCase extends TestBase {
         Thread.sleep(3000);
 
         String vehicleType = driver.findElement(By.id(OR.getProperty("Insurancetype"))).getText();
-        Assert.assertEquals(vehicleType, "Motorcycle Insuranc");
-
+        Assert.assertEquals(vehicleType, "Motorcycle Insurance");
         Reporter.log("Vehicle Insurance Test Case Passed");
-//        Reporter.log("<a href = "C:\\Users\\afnan\\Downloads\\ChatGPT Image Apr 10, 2025, 02_22_14 PM.png">ScreenShot</a>");
-
-        Reporter.log("<a target=\"_blank\" href=\"C:\\Users\\afnan\\Downloads\\Photo1.jpg\"><img src=\"C:\\Users\\afnan\\Downloads\\Photo1.jpg\"></img></a>");
-
     }
 }
