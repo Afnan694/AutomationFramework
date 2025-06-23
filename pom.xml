@@ -32,8 +32,6 @@
         </dependency>
 
 
-
-
         <!-- https://mvnrepository.com/artifact/com.relevantcodes/extentreports -->
         <dependency>
             <groupId>com.relevantcodes</groupId>

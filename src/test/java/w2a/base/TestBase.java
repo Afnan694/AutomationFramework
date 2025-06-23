@@ -20,7 +20,7 @@ public class TestBase {
     public static Properties OR = new Properties();
     public static FileInputStream fis;
     public static String browser;
-//    public static final Logger logger = LogManager.getLogger(TestBase.class);
+    //    public static final Logger logger = LogManager.getLogger(TestBase.class);
     public static Logger log = Logger.getLogger("devpinoyLogger");
 
 
@@ -42,8 +42,7 @@ public class TestBase {
             } else if (config.getProperty("browser").equals("ie")) {
                 driver = new InternetExplorerDriver();
                 log.info("Internet Explorer browser launched successfully.");
-            }
-            else if (config.getProperty("browser").equals("edge")) {
+            } else if (config.getProperty("browser").equals("edge")) {
                 driver = new EdgeDriver();
                 log.info("Internet Explorer browser launched successfully.");
             }
