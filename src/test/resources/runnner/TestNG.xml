@@ -11,7 +11,7 @@
 
     <test name="Vehicle Insurance Test">
         <classes>
-            <class name="w2a.testcases.LoginTestCase"/>
+            <class name="w2a.testcases.MotocycleTestCase"/>
             <class name="w2a.testcases.AutomobileTestCase"/>
         </classes>
     </test> <!-- Test -->

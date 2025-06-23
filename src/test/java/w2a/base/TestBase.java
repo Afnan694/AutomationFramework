@@ -1,17 +1,24 @@
 package w2a.base;
 
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
 import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.annotations.*;
+import w2a.utilities.ExtentManager;
 
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
+
+//import static jdk.javadoc.internal.doclets.formats.html.markup.HtmlStyle.details;
 
 public class TestBase {
 
@@ -22,6 +29,8 @@ public class TestBase {
     public static String browser;
     //    public static final Logger logger = LogManager.getLogger(TestBase.class);
     public static Logger log = Logger.getLogger("devpinoyLogger");
+    public ExtentReports rep = ExtentManager.getInstance();
+    public static ExtentTest test;
 
 
     @BeforeMethod
@@ -64,6 +73,16 @@ public class TestBase {
         }
     }
 
+    public void click(String locator) {
+        driver.findElement(By.cssSelector(OR.getProperty(locator))).click();
+        test.log(LogStatus.INFO, "Clicked on Locator: " + locator);
+    }
+
+    public void type(String locator,String value){
+        driver.findElement(By.cssSelector(OR.getProperty(locator))).sendKeys(value
+        );
+        test.log(LogStatus.INFO, "Typing on Locator: " +locator+"Entered Value as"+value);
+    }
 
 }
 
