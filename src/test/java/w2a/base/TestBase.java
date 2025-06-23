@@ -3,6 +3,7 @@ package w2a.base;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.annotations.*;
@@ -40,6 +41,10 @@ public class TestBase {
                 log.info("Firefox browser launched successfully.");
             } else if (config.getProperty("browser").equals("ie")) {
                 driver = new InternetExplorerDriver();
+                log.info("Internet Explorer browser launched successfully.");
+            }
+            else if (config.getProperty("browser").equals("edge")) {
+                driver = new EdgeDriver();
                 log.info("Internet Explorer browser launched successfully.");
             }
 

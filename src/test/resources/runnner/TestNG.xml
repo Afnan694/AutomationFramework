@@ -3,6 +3,12 @@
 <suite name="Vehicle Insurance Test Suite" verbose="1">
 
 
+    <listeners>
+        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+        <listener class-name="w2a.listeners.CustomListeners"/>
+    </listeners>
+
     <test name="Vehicle Insurance Test">
         <classes>
             <class name="w2a.testcases.LoginTestCase" />
