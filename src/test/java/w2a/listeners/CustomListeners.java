@@ -26,7 +26,6 @@ public class CustomListeners implements ITestListener {
     public void onTestFailure(ITestResult result) {
 
 
-
         System.setProperty("org.uncommons.reportng.escape-output", "false");
         try {
             TestUtil.CaptureScreenShot();
@@ -34,16 +33,12 @@ public class CustomListeners implements ITestListener {
             throw new RuntimeException(e);
         }
         Reporter.log("Capuring screenshot for failed test: " + result.getName());
-        Reporter.log("<a target=\"_blank\" href="+TestUtil.screenshotName+">Screenshot</a>");
+        Reporter.log("<a target=\"_blank\" href=" + TestUtil.screenshotName + ">Screenshot</a>");
         Reporter.log("<br>");
         Reporter.log("<br>");
-        Reporter.log("<a target=\"_blank\" href="+TestUtil.screenshotName+"><img src="+TestUtil.screenshotName+"></img></a>");
+        Reporter.log("<a target=\"_blank\" href=" + TestUtil.screenshotName + "><img src=" + TestUtil.screenshotName + "></img></a>");
         Reporter.log("<br>");
         Reporter.log("Test failed: " + result.getName());
-
-
-
-
         System.out.println("Test failed: " + result.getName());
     }
 
